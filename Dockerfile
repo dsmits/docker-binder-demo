@@ -1,3 +1,6 @@
-FROM continuumio/anaconda3
+FROM jupyter/minimal-notebook
+USER root
 
-RUN apt-get update -y && apt-get install -y ffmpeg
+RUN apt update -y && apt install -y --no-install-recommends ffmpeg
+
+USER ${NB_UID}
