@@ -1,6 +1,7 @@
 FROM jupyter/minimal-notebook
+
 USER root
 
-RUN apt update -y && apt install -y --no-install-recommends ffmpeg
+RUN apt update -y && apt install -y ffmpeg
 
-USER ${NB_UID}
+USER $NB_USER
