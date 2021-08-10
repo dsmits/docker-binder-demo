@@ -1,1 +1,4 @@
 .idea/
+notebooks/*.png
+notebooks/*.gif
+.ipynb_checkpoints/
