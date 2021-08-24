@@ -7,8 +7,7 @@ ARG NB_USER=jupyter
 RUN adduser --disabled-password --gecos "" $NB_USER
 
 # Install the required dependencies
-RUN apt update -y && \
-    apt install -y imagemagick && \
+RUN apk add imagemagick && \
     pip install jupyter
 
 COPY notebooks/ /home/$NB_USER/
