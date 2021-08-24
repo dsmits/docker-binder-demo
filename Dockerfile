@@ -8,7 +8,7 @@ RUN adduser --disabled-password --gecos "" $NB_USER
 
 # Install the required dependencies
 RUN apk add imagemagick && \
-    pip install jupyter
+    pip install jupyter matplotlib seaborn pandas
 
 COPY notebooks/ /home/$NB_USER/
 # Switch to specified non-root user
