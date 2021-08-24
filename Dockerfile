@@ -1,5 +1,5 @@
 # A base image that comes with a small number of Python packages
-FROM continuumio/miniconda3
+FROM continuumio/miniconda3:4.10.3-alpine
 
 # mybinder requires the argument NB_USER to specify a non-root user that will be used to run jupyter
 ARG NB_USER=jupyter
@@ -11,6 +11,7 @@ RUN apt update -y && \
     apt install -y imagemagick && \
     pip install jupyter
 
+COPY notebooks/ /home/$NB_USER/
 # Switch to specified non-root user
 USER $NB_USER
 
